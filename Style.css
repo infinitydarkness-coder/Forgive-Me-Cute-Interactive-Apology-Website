@@ -1,0 +1,70 @@
+
+  :root{
+    --pink:#ffd6e0;
+    --accent:#ff4d6d;
+    --muted:#666;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:linear-gradient(180deg,#ffd6e0,#fff7fb);color:#333}
+  .app{
+    min-height:100vh;display:flex;align-items:center;justify-content:center;
+    padding:24px;
+  }
+
+  .page{
+    width:100%;
+    max-width:420px;
+    background:rgba(255,255,255,0.85);
+    border-radius:16px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.12);
+    padding:28px;
+    text-align:center;
+    display:none;
+    flex-direction:column;
+    align-items:center;
+  }
+  .page.active{display:flex}
+
+  .cute{
+    width:140px;height:140px;border-radius:18px;overflow:hidden;object-fit:cover;border:6px solid rgba(255,255,255,0.8);box-shadow:0 8px 20px rgba(0,0,0,0.08);margin-bottom:18px;
+  }
+  h1{margin:6px 0 8px;font-size:22px}
+  p{margin:0 0 18px;color:var(--muted)}
+
+  .btn-row{position:relative;width:100%;height:120px;margin-top:6px}
+  .btn{
+    position:absolute;
+    padding:12px 18px;
+    border-radius:10px;
+    border:0;
+    font-size:15px;
+    cursor:pointer;
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    user-select:none;
+  }
+  .btn.yes{ background:var(--accent); color:white; left:36px; top:36px; }
+  .btn.yes:hover{ transform:translateY(-3px) }
+  .btn.no{ background:#555; color:white; right:36px; top:36px; }
+  .btn.small{ padding:10px 14px; font-size:14px }
+
+  /* floating hearts */
+  .heart{
+    position:fixed; bottom:-40px; pointer-events:none; z-index:9999;
+    animation:floatUp 3.6s cubic-bezier(.2,.8,.2,1) forwards;
+    text-shadow:0 6px 20px rgba(0,0,0,0.12);
+  }
+  @keyframes floatUp{
+    0%{ transform: translateY(0) rotate(0deg); opacity:1 }
+    50%{ transform: translateY(-45vh) rotate(30deg); opacity:0.9 }
+    100%{ transform: translateY(-110vh) rotate(360deg); opacity:0 }
+  }
+
+  /* success content */
+  #successPage .success-box{display:flex;flex-direction:column;align-items:center;gap:12px}
+  .muted-small{color:#777;font-size:14px}
+
+  /* responsive */
+  @media (max-width:420px){
+    .page{padding:20px;border-radius:12px}
+    .btn-row{height:110px}
+  }
